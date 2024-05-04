@@ -33,7 +33,7 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.green,
         title: Text('Home'),
       ),
-      body: Center(
+      /*body: Center(
         child: Wrap(
           alignment: WrapAlignment.end,//(horizontally)
           crossAxisAlignment: WrapCrossAlignment.end,//(vertically)
@@ -48,7 +48,7 @@ class Home extends StatelessWidget {
             Text(MediaQuery.orientationOf(context).toString()),
           ],
         ),
-      ),
+      ),*/
 
       /*body: LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints){
         if(constraints.maxWidth <500){
@@ -63,37 +63,37 @@ class Home extends StatelessWidget {
 
       ),*/
 
-      // body: OrientationBuilder(builder: (BuildContext context, Orientation orientation) {
-      //   if(orientation == Orientation.landscape){
-      //     return Container(
-      //       width: double.infinity,
-      //       height: double.infinity,
-      //       color: Colors.green,
-      //       child: SingleChildScrollView(
-      //         child: Column(
-      //           children: [
-      //             GridView(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-      //               children: [
-      //                 Text('1'),
-      //                 Text('3'),
-      //                 Text('4'),
-      //                 Text('5'),
-      //                 Text('6'),
-      //               ],
-      //             )
-      //           ],
-      //         ),
-      //       ),
-      //     );
-      //   }else{
-      //     return Container(
-      //       width: double.infinity,
-      //       height: double.infinity,
-      //       color: Colors.red,
-      //     );
-      //   }
-      // },
-    //),
+      body: OrientationBuilder(builder: (BuildContext context, Orientation orientation) {
+        if(orientation == Orientation.landscape){
+          return Container(
+            width: double.infinity,
+            height: double.infinity,
+            color: Colors.green,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  GridView(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                    children: [
+                      Text('1'),
+                      Text('3'),
+                      Text('4'),
+                      Text('5'),
+                      Text('6'),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          );
+        }else{
+          return Container(
+            width: double.infinity,
+            height: double.infinity,
+            color: Colors.red,
+          );
+        }
+      },
+    ),
     );
   }
 }
